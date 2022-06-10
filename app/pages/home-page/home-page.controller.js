@@ -2,7 +2,7 @@ angular
   .module('appModule')
   .controller('homeController', homePageController);
 
-function homePageController(Employees) {
+function homePageController(Employees, $location) {
   const homePageVm = this;
   homePageVm.employees = [];
 
@@ -16,12 +16,7 @@ function homePageController(Employees) {
   }
 
   homePageVm.filter = function (value) {
-    const searchString = value.toLowerCase();
-    homePageVm.employees = homePageVm.employees.filter(employee => {
-      return (
-        employee.profile.name.toLowerCase().includes(searchString) ||
-        employee.profile.about.toLowerCase().includes(searchString)
-      );
-    });
+    $location.search('filter', value);
+    homePageVm.searchValue = value;
   };
 }
