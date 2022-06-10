@@ -4,7 +4,7 @@
   margin-bottom: 24px;
   font-size: 14px;
 
-  .c-users-list__header {
+  &__header {
     display: table-row;
     font-size: 16px;
     font-weight: 500;
@@ -18,7 +18,7 @@
     }
   }
 
-  .c-users-list__body {
+  &__body {
     display: table-row;
     height: 64px;
 
@@ -29,14 +29,14 @@
     }
   }
 
-  .c-users-list__avatar {
+  &__avatar {
     width: 32px;
     height: 32px;
     margin-right: 8px;
     border-radius: 50%;
   }
 
-  .c-users-list__main-info {
+  &__main-info {
     display: flex;
     align-items: center;
   }

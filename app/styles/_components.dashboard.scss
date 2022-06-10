@@ -17,23 +17,33 @@
 .c-dashboard {
   margin: 8px 16px;
 
-  .c-dashboard__header {
+  &__header {
     display: flex;
     justify-content: center;
   }
 
-  .c-dashboard__footer {
+  &__footer {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
 
-.c-filters__container {
-  margin: 0 0 8px;
-  padding: 16px 8px;
-  border: 1px solid #dcdee3;
-  background-color: #e5e9f1;
+.c-filters {
+  &__container {
+    margin: 0 0 8px;
+    padding: 16px 8px;
+    border: 1px solid #dcdee3;
+    background-color: #e5e9f1;
+  }
+  &__search {
+    .input {
+      width: 100%;
+      outline: none;
+      border: none;
+      padding: 0.6rem;  
+    }
+  }
 }
 
 .c-chart__container {
