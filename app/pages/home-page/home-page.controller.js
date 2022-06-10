@@ -18,7 +18,11 @@ function homePageController(Employees, $location) {
   }
 
   homePageVm.filter = function (value) {
-    $location.search('filter', value);
-    homePageVm.searchValue = value;
+    if (value && value !== '') {
+      $location.search('filter', value);
+      homePageVm.searchValue = value;
+    } else {
+      $location.search('filter', null);
+    }
   };
 }
