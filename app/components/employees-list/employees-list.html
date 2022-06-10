@@ -17,7 +17,7 @@
       </div>
     </div>
     <div> {{ employee.email }} </div>
-    <div> {{ employee.profile.address }} </div>
+    <div ng-bind-html="highlight(employee.profile.address, EmployeesListComponentVm.searchValue)"></div>
     <div> {{ employee.start_date | date }} </div>
     <div> {{ employee.performance_index }} </div>
     <div ng-bind-html="highlight(employee.profile.about, EmployeesListComponentVm.searchValue)"></div>

@@ -4,7 +4,9 @@ angular
 
 function homePageController(Employees, $location) {
   const homePageVm = this;
+  const { filter } = $location.search();
   homePageVm.employees = [];
+  homePageVm.searchValue = filter;
 
   activate();
 
