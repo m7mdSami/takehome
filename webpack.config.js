@@ -18,7 +18,7 @@ module.exports = {
     new ESLintPlugin({
       failOnError: true,
       emitWarning: false,
-      outputReport: true
+      outputReport: true,
     }),
     new VueLoaderPlugin(),
   ],
