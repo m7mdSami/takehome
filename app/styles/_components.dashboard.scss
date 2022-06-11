@@ -62,7 +62,9 @@
   &__filter {
     display: flex;
     justify-content: space-around;
-    margin: 2rem 0;
+    & > div {
+      margin: 0 2rem;
+    }
   }
 }
 

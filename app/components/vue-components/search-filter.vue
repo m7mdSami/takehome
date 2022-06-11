@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "search-filter",
+  name: "SearchFilterComponent",
   props: ["searchValue"],
   data() {
     return {

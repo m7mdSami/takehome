@@ -1,17 +1,5 @@
 <template>
   <div class="c-chart__container">
-
-    <div class="c-chart__filter">
-      <div class="c-chart__start">
-        <label for="start">Start date:</label>
-        <input type="date" id="start" name="trip-start" min="1950-01-01" v-model="startDate" @input="dateFliter()">
-      </div>
-
-      <div class="c-chart__end">
-        <label for="end">End date:</label>
-        <input type="date" id="end" name="trip-end" min="1950-01-01" v-model="endDate" @input="dateFliter()">
-      </div>
-    </div>
     <v-chart ref="chart" :option="chartOptions" />
   </div>
 </template>
@@ -28,7 +16,7 @@ import {
   VisualMapComponent,
 } from "echarts/components";
 import VChart from "vue-echarts";
-import axios from 'axios';
+import axios from "axios";
 
 use([
   CanvasRenderer,
@@ -47,15 +35,14 @@ export default {
   },
 
   data() {
-    return {
-      chartData: [],
-      chartDataBackup: [],
-      startDate: '',
-      endDate: ''
-    };
+    return {};
   },
 
   computed: {
+    chartData() {
+      return this.$store.state.chartData;
+    },
+
     initOptions() {
       return {
         width: "auto",
@@ -70,7 +57,7 @@ export default {
           left: "center",
         },
         tooltip: {
-          trigger: 'axis',
+          trigger: "axis",
           transitionDuration: 0,
           confine: false,
           hideDelay: 0,
@@ -130,27 +117,6 @@ export default {
     formatDate(dateInMs) {
       return moment(dateInMs).format("DD MMM YYYY");
     },
-    getChartData() {
-      axios.get(`https://fe-task.getsandbox.com/performance`)
-        .then(res => {
-          console.log(res.data)
-          this.chartData = [...this.chartData, ...res.data]
-          this.chartDataBackup = [...this.chartDataBackup, ...res.data]
-        })
-    },
-    dateFliter() {
-      const start_date = new Date(this.startDate).getTime()
-      const end_date = new Date(this.endDate).getTime()
-
-      if(start_date && end_date) {
-        this.chartData = this.chartDataBackup.filter(item => item.date_ms >= start_date && item.date_ms <= end_date)
-      }
-
-    }
   },
-
-  mounted() {
-    this.getChartData();
-  }
 };
 </script>
