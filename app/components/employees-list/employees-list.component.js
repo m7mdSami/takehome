@@ -6,7 +6,15 @@ angular
     controllerAs: 'EmployeesListComponentVm',
     bindings: {
       employeesList: '<',
+      searchValue: '<',
     },
   });
 
-function EmployeesListComponent() {}
+function EmployeesListComponent($scope, $sce) {
+  $scope.highlight = function (text, searchValue) {
+    if (!searchValue) {
+      return $sce.trustAsHtml(text);
+    }
+    return $sce.trustAsHtml(text.replace(new RegExp(searchValue, 'gi'), '<span class="c-users-list__highlightedText">$&</span>'));
+  };
+}
