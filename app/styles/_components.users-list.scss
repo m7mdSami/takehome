@@ -8,13 +8,16 @@
     display: table-row;
     font-size: 16px;
     font-weight: 500;
-    background-color: #e5e9f1;
+    color: #fff;
+    background-color: $light-blue;
 
     > div {
       display: table-cell;
       text-align: center;
       vertical-align: middle;
       font-size: 14px;
+      min-width: 155px;
+      padding: 1rem;
     }
   }
 
@@ -26,6 +29,10 @@
       display: table-cell;
       padding: 0 8px;
       vertical-align: middle;
+    }
+
+    &:nth-of-type(odd) {
+      background-color: #ededef;
     }
   }
 

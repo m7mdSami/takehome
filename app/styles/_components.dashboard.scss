@@ -33,15 +33,22 @@
   &__container {
     margin: 0 0 8px;
     padding: 16px 8px;
+    display: flex;
+    justify-content: center;
     border: 1px solid #dcdee3;
-    background-color: #e5e9f1;
+    background-color: #dae7f8;
   }
   &__search {
     .input {
-      width: 100%;
       outline: none;
       border: none;
       padding: 0.6rem;  
+    }
+    .reset {
+      background-color: $light-blue;
+      color: #fff;
+      padding: 0.7rem;
+      border-radius: 5px;
     }
   }
 }

@@ -23,6 +23,7 @@ function homePageController(Employees, $location) {
       homePageVm.searchValue = value;
     } else {
       $location.search('filter', null);
+      homePageVm.searchValue = '';
     }
   };
 }
