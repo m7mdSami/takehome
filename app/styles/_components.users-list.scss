@@ -4,21 +4,24 @@
   margin-bottom: 24px;
   font-size: 14px;
 
-  .c-users-list__header {
+  &__header {
     display: table-row;
     font-size: 16px;
     font-weight: 500;
-    background-color: #e5e9f1;
+    color: #fff;
+    background-color: $light-blue;
 
     > div {
       display: table-cell;
       text-align: center;
       vertical-align: middle;
       font-size: 14px;
+      min-width: 155px;
+      padding: 1rem;
     }
   }
 
-  .c-users-list__body {
+  &__body {
     display: table-row;
     height: 64px;
 
@@ -27,17 +30,26 @@
       padding: 0 8px;
       vertical-align: middle;
     }
+
+    &:nth-of-type(odd) {
+      background-color: #ededef;
+    }
   }
 
-  .c-users-list__avatar {
+  &__avatar {
     width: 32px;
     height: 32px;
     margin-right: 8px;
     border-radius: 50%;
   }
 
-  .c-users-list__main-info {
+  &__main-info {
     display: flex;
     align-items: center;
+  }
+
+  &__highlightedText {
+    background-color: #888;
+    color: #fff;
   }
 }

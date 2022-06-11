@@ -1,9 +1,9 @@
 <div class="c-dashboard">
   <div class="c-filters__container">
-    [Place search component here]
+    <search-filter v-on-filter="homePageVm.filter" v-props-search-value="homePageVm.searchValue"/>
   </div>
 
-  <employees-list employees-list="homePageVm.employees"></employees-list>
+  <employees-list employees-list="homePageVm.employees" search-value="homePageVm.searchValue"></employees-list>
 
   <div class="c-dashboard__footer">
     <button class="c-button">
