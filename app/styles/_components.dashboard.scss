@@ -53,9 +53,17 @@
   }
 }
 
-.c-chart__container {
-  height: 350px;
-  width: 760px;
+.c-chart {
+  &__container {
+    height: 350px;
+    width: 760px;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+  }
 }
 
 .c-button {
