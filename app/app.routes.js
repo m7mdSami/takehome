@@ -1,10 +1,11 @@
 angular.module('appModule')
   .config(($locationProvider) => {
     $locationProvider.html5Mode({
-      enabled: true,
+      enabled: false,
     });
   })
-  .config(($stateProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
+    $urlRouterProvider.otherwise('/');
     $stateProvider
       .state({
         name: 'app',
