@@ -76,6 +76,7 @@ export default {
           data: this.xAxisData,
           axisLine: {
             show: true,
+            color: "#dd0"
           },
           axisTick: {
             show: false,
@@ -99,6 +100,7 @@ export default {
             lineStyle: {
               width: 2,
             },
+            // color: this.colors,
           },
         ],
       };
@@ -111,6 +113,10 @@ export default {
     yAxisData() {
       return this.chartData.map((item) => +item.performance * 100);
     },
+
+    colors() {
+      return this.chartData.map((item) => (+item.performance * 100) <= 50 ? "#ff0000" : "#ff0" );
+    }
   },
 
   methods: {
