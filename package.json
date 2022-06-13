@@ -6,6 +6,7 @@
     "@vue/composition-api": "^1.4.4",
     "angular": "^1.8.2",
     "axios": "^0.27.2",
+    "cypress-angularjs-unit-test": "^1.2.1",
     "echarts": "^5.2.2",
     "moment": "^2.29.1",
     "ngVue": "^1.7.8",
