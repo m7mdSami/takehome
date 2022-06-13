@@ -6,7 +6,7 @@
   <employees-list employees-list="homePageVm.employees" search-value="homePageVm.searchValue"></employees-list>
 
   <div class="c-dashboard__footer">
-    <button class="c-button" ng-click="homePageVm.loadMore(homePageVm.current_page + 1)">
+    <button class="c-button" ng-click="homePageVm.loadMore(homePageVm.current_page + 1)" ng-disabled="homePageVm.isLoad">
       Load More
     </button>
   </div>

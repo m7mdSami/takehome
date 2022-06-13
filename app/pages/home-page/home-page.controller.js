@@ -8,13 +8,16 @@ function homePageController(Employees, $location) {
   homePageVm.employees = [];
   homePageVm.searchValue = filter;
   homePageVm.current_page = 1;
+  homePageVm.isLoad = false;
 
   const getEmployees = (page) => {
+    homePageVm.isLoad = true;
     Employees.getEmployees(page)
       .then(({ data }) => {
         console.log(data);
         homePageVm.current_page = data.current_page;
         homePageVm.employees = homePageVm.employees.concat(data.employees);
+        homePageVm.isLoad = false;
       });
   };
 
@@ -35,7 +38,6 @@ function homePageController(Employees, $location) {
   };
 
   homePageVm.loadMore = (page) => {
-    console.log(999);
     getEmployees(page);
   };
 }
