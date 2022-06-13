@@ -45,6 +45,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --progress",
     "lint": "eslint . --fix",
-    "cypress:start": "cd node_modules/.bin/ && cypress open"
+    "cypress:start": "cd node_modules/.bin/ && cypress open",
+    "build": "rimraf ./dist && webpack --bail --progress --profile"
   }
 }
