@@ -1,3 +1,4 @@
+/* eslint-disable no-unneeded-ternary */
 angular
   .module('appModule')
   .controller('homeController', homePageController);
@@ -9,15 +10,16 @@ function homePageController(Employees, $location) {
   homePageVm.searchValue = filter;
   homePageVm.current_page = 1;
   homePageVm.isLoad = false;
+  homePageVm.isLastPage = false;
 
   const getEmployees = (page) => {
     homePageVm.isLoad = true;
     Employees.getEmployees(page)
       .then(({ data }) => {
-        console.log(data);
         homePageVm.current_page = data.current_page;
         homePageVm.employees = homePageVm.employees.concat(data.employees);
         homePageVm.isLoad = false;
+        homePageVm.isLastPage = data.current_page === data.pages ? true : false;
       });
   };
 
